@@ -1,3 +1,19 @@
+// Get references to the #generate element
+const specialChar = "+=-_!@#$%^&*()";
+const generateButton = document.getElementById("generateBtn")
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
 // Assignment Code 
 function generatePassword() {
 
@@ -14,12 +30,59 @@ function generatePassword() {
   var numeric = confirm("Numbers, yes or cancel?");
   var special = confirm("Special Letters, yes or cancel?");
 
+  // Minimum count for all options
+  var minCount = 0;
 
 
-  var capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""); abcdefghijklmnopqrstuvwxyz
+  var capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
   var Lowercase = "abcdefghijklmnopqrstuvwxyz".split("");
   var numbers = "0123456789".split("");
-  var specialchar = "+=-_!@#$%^&*".split("");
+  var specialChar = "+=-_!@#$%^&*".split("");
+
+  // May have to take away the lettersmall of em leave the ()
+  //Array with Math functions
+  var functionArray = [
+    function getcapital() {
+      return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+    },
+    function getLowercase() {
+      return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+    },
+    function getnumbers() {
+      return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+    },
+    function getspecialChar() {
+      return String.fromCharCode(Math.floor(Math.random() * specialChar.length));
+    },
+  ];
+
+  // If statements, are ensuring prompts are true/false
+
+  if (upper === true) {
+    capital = functionArray[0];
+    minCount++;
+  }
+  if (lower === true) {
+    Lowercase = functionArray[1];
+    minCount++;
+  }
+  if (numeric === true) {
+    numbers = functionArray[2];
+    minCount++;
+  }
+  if (special === true) {
+    specialChar = functionArray[3];
+    minCount++;
+  }
+
+  // New Variable
+  
+
+
+
+
+
+
 
   var passwordString = "";
 
@@ -31,7 +94,7 @@ function generatePassword() {
     if (upper) { passwordString += capital[Math.floor(Math.random() * capital.length)] }
     if (lower) { passwordString += Lowercase[Math.floor(Math.random() * Lowercase.length)] }
     if (numeric) { passwordString += numbers[Math.floor(Math.random() * numbers.length)] }
-    if (special) { passwordString += specialchar[Math.floor(Math.random() * specialchar.length)] }
+    if (special) { passwordString += specialChar[Math.floor(Math.random() * specialChar.length)] }
 
   }
 
@@ -39,21 +102,3 @@ function generatePassword() {
 }
 
 
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-
-
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
