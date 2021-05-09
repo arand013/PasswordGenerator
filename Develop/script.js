@@ -1,8 +1,8 @@
 // Get references to the #generate element
-const specialChar = "+=-_!@#$%^&*()";
-const generateButton = document.getElementById("generateBtn")
+const specialCharacters = "+=-_!@#$%^&*()";
+const generateButton = document.getElementById('generateBtn')
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener('click', writePassword)
 
 
 // Write password to the #password input
@@ -19,10 +19,13 @@ function generatePassword() {
 
 
   // Variables with prompts here
-  var password = alert("Welcome, here is some criteria for your New Password!");
+  alert("Welcome, here is some criteria for your New Password!");
   var passwordLength = prompt("What length from 8 to 128 characters would you like your password to be");
-  passwordLength = parseInt(passwordLength);
   console.log(passwordLength);
+  console.log(upper);
+  console.log(lower);
+  console.log(numeric);
+  console.log(special);
 
 
   var upper = confirm("Uppercase Letters, yes or cancel?");
@@ -30,75 +33,69 @@ function generatePassword() {
   var numeric = confirm("Numbers, yes or cancel?");
   var special = confirm("Special Letters, yes or cancel?");
 
-  // Minimum count for all options
+
+  // Varaiables for all options
   var minCount = 0;
 
 
-  var capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-  var Lowercase = "abcdefghijklmnopqrstuvwxyz".split("");
-  var numbers = "0123456789".split("");
-  var specialChar = "+=-_!@#$%^&*".split("");
+  var capital = "";
+  var Lowercase = "";
+  var numbers = "";
+  var specialChar = "";
 
   // May have to take away the lettersmall of em leave the ()
   //Array with Math functions
-  var functionArray = [
-    function getcapital() {
+  var functionArray = {
+    getcapital: function () {
       return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
     },
-    function getLowercase() {
-      return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+    getLowercase: function () {
+      return String.fromCharCode(Math.floor(Math.random() * 26 + 55));
     },
-    function getnumbers() {
+    getnumbers: function () {
       return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
     },
-    function getspecialChar() {
-      return String.fromCharCode(Math.floor(Math.random() * specialChar.length));
-    },
-  ];
+    getspecialCharacters: function () {
+      return specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+    }
+  };
 
   // If statements, are ensuring prompts are true/false
 
   if (upper === true) {
-    capital = functionArray[0];
+    capital = functionArray.getcapital();
     minCount++;
   }
   if (lower === true) {
-    Lowercase = functionArray[1];
+    Lowercase = functionArray.getLowercase();
     minCount++;
   }
   if (numeric === true) {
-    numbers = functionArray[2];
+    numbers = functionArray.getnumbers();
     minCount++;
   }
   if (special === true) {
-    specialChar = functionArray[3];
+    specialChar = functionArray.getspecialCharacters();
     minCount++;
   }
 
   // New Variable
-  
+  var thePassword = "";
 
+  // this loop add(s) the randomness together. 
+  for (let i = 0; i < (parseInt(passwordLength) - minCount); i++) {
+    var randomPassword = Math.floor(Math.random() * 7);
 
-
-
-
-
-
-  var passwordString = "";
-
-
-  // While loop inserted here
-
-  while (passwordString.length < passwordLength) {
-
-    if (upper) { passwordString += capital[Math.floor(Math.random() * capital.length)] }
-    if (lower) { passwordString += Lowercase[Math.floor(Math.random() * Lowercase.length)] }
-    if (numeric) { passwordString += numbers[Math.floor(Math.random() * numbers.length)] }
-    if (special) { passwordString += specialChar[Math.floor(Math.random() * specialChar.length)] }
-
+    thePassword += randomPassword;
   }
 
-  return passwordString;
+  // Adding thePassword with all the options
+  thePassword += capital;
+  thePassword += Lowercase;
+  thePassword += numbers;
+  thePassword += specialChar;
+
+  return thePassword;
 }
 
 
