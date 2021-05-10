@@ -1,6 +1,6 @@
 # Password Generator Starter Code
 
-[link to Portfolio!] https://arand013.github.io/Portfolio/
+[link to Password Generator!] https://arand013.github.io/PasswordGenerator/
 
 
 * GIVEN I need a new, secure password
