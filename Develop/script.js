@@ -18,6 +18,12 @@ function generatePassword() {
   // Variables with prompts here
   alert("Welcome, here is some options for your New Password!");
   var passwordLength = prompt("Type length of characters from 8 to 128 you want your password to be?");
+  if (passwordLength === "" || passwordLength === null || passwordLength < 8 || passwordLength > 128) {
+    window.alert("Must provide a # between 8 to 128. Please try again.");
+    // use return to call it again and stop the rest of this function from running
+    return generatePassword();
+  }
+
 
   var upper = confirm("Uppercase Letters, ok or cancel?");
   var lower = confirm("Lowercase Letters, ok or cancel?");
@@ -65,7 +71,7 @@ function generatePassword() {
     if (upper === true) {
       capital = stringFunction.getcapital();
       thePassword.push(capital);
-    } 
+    }
     if (lower === true) {
       Lowercase = stringFunction.getLowercase();
       thePassword.push(Lowercase);
