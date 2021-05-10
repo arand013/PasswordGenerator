@@ -35,3 +35,8 @@
  7. Comments were also applied in pseudo code
  8. Created branches to add, commit, push and merge to git hub
 
+<img width="1440" alt="Screen Shot 2021-05-09 at 9 42 32 PM" src="https://user-images.githubusercontent.com/81955843/117607001-edf7d500-b10f-11eb-8212-eae79f003736.png">
+
+<img width="1440" alt="Screen Shot 2021-05-09 at 9 42 01 PM" src="https://user-images.githubusercontent.com/81955843/117607022-fbad5a80-b10f-11eb-8b58-db07436cd808.png">
+
+<img width="1440" alt="Screen Shot 2021-05-09 at 9 42 07 PM" src="https://user-images.githubusercontent.com/81955843/117607029-010aa500-b110-11eb-970e-da80d000db05.png">
