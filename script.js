@@ -9,26 +9,29 @@ function writePassword() {
 
   passwordText.value = password;
 
+
+
 }
+
 
 // Assignment Code 
 function generatePassword() {
 
 
   // Variables with prompts here
-  alert("Welcome, here is some options for your New Password!");
-  var passwordLength = prompt("Type length of characters from 8 to 128 you want your password to be?");
-  if (passwordLength === "" || passwordLength === null || passwordLength < 8 || passwordLength > 128) {
-    window.alert("Must provide a # between 8 to 128. Please try again.");
+  alert("To create new randmom password, select what you want in your New Password.");
+  var passwordLength = prompt("Please, type the numbers of characters you'd like your password to be in the space below? (5 to 20 character limit)");
+  if (passwordLength === "" || passwordLength === null || passwordLength < 5 || passwordLength > 20) {
+    window.alert("Must provide a # between 5 to 20. Please try again.");
     // use return to call it again and stop the rest of this function from running
     return generatePassword();
   }
 
 
-  var upper = confirm("Uppercase Letters, ok or cancel?");
-  var lower = confirm("Lowercase Letters, ok or cancel?");
-  var numeric = confirm("Numbers, ok or cancel?");
-  var special = confirm("Special Letters, ok or cancel?");
+  var upper = confirm("Do you want Uppercase Letters, Press OK or cancel for NO?");
+  var lower = confirm("Do you want Lowercase Letters, Press OK or cancel for NO?");
+  var numeric = confirm("Do you want Numbers, Press OK or cancel for NO?");
+  var special = confirm("Do you want Special Letters, Press OK or cancel for NO?");
 
   // Console log info for valaidation
   console.log(passwordLength);
@@ -94,7 +97,22 @@ function generatePassword() {
   // finalPass deletes extra (,'s) with the random #
 
   return finalPass.join("")
+
+  
+
 }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword)
+
+const copyBtn = document.getElementById('copyBtn');
+
+copyBtn.addEventListener('click', (event) => {
+  var passwordText = document.querySelector("#password").textContent;
+
+  passwordText.select();
+  passwordText.setSelectionRange(0, 20); /* For mobile devices */
+
+  navigator.clipboard.writeText(passwordText);
+})
