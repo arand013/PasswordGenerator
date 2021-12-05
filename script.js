@@ -1,6 +1,7 @@
 // Get references to the #generate element and inserted Special Characters
 const specialCharacters = "+=-_!@#$%^&*()";
 const generateButton = document.getElementById('generateBtn')
+const copyButton = document.getElementById('copyBtn')
 
 // Write password variable to the #password input
 function writePassword() {
@@ -105,7 +106,7 @@ function copyFunction() {
   Pass.setSelectionRange(0, 20); /* For mobile devices */
 
   /* Copy the text inside the text field */
-  navigator.clipboard.writeText(Pass.value);
+  document.execCommand("copy");
 
   /* Alert the copied text */
   alert("Success You copied your new password " + Pass.value);
@@ -117,5 +118,5 @@ function copyFunction() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
-copyBtn.addEventListener('click', copyFunction);
+copyButton.addEventListener('click', copyFunction);
 

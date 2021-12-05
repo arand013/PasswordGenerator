@@ -19,17 +19,34 @@
         <h2>Generate a Password</h2>
       </div>
       <div class="card-body">
-        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+        <input readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></input>
       </div>
       <div class="card-footer">
         <button id="generateBtn" class="btn">Generate Password</button>
       </div>
       <div class="card-footer">
-        <button id="copyBtn" class="btn" >Click to Copy Password</button>
+        <button id="copyBtn" class="btn">Click to Copy Password</button>
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js">
+
+    function copyFunction() {
+      /* Get the text field */
+      var Pass = document.getElementById("password");;
+
+      /* Select the text field */
+      Pass.select();
+      Pass.setSelectionRange(0, 20); /* For mobile devices */
+
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
+
+      /* Alert the copied text */
+      alert("Success You copied your new password " + Pass.value);
+    };
+
+  </script>
 </body>
 
 </html>
