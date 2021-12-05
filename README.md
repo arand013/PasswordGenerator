@@ -1,23 +1,16 @@
 # Password Generator Starter Code
 
-[link to Password Generator!] https://arand013.github.io/PasswordGenerator/
+Hello visitor, 
+
+This is Random Password generator! Free for everyone, built using best practices :) 
+<br>
+Easy to use generator & Click to copy functionality. 
+<br> 
 
 
-* GIVEN I need a new, secure password
-1. WHEN I click the button to generate a password 
-* THEN I am presented with a series of prompts for password criteria
-2. WHEN prompted for password criteria
-* THEN I select which criteria to include in the password
-3. WHEN prompted for the length of the password
-* THEN I choose a length of at least 8 characters and no more than 128 characters
-4. WHEN prompted for character types to include in the password
-* THEN I choose lowercase, uppercase, numeric, and/or special characters
-5. WHEN I answer each prompt
-* THEN my input should be validated and at least one character type should be selected
-6. WHEN all prompts are answered
-* THEN a password is generated that matches the selected criteria
-7. WHEN the password is generated
-* THEN the password is either displayed in an alert or written to the page
+
+[Click here to visit!!] https://arand013.github.io/PasswordGenerator/
+
 
 ## Editing
  In this html, css and Javascript structure a functional password generator was created. Writing and editing a majority of the code in Javascript.  
@@ -35,8 +28,6 @@
  7. Comments were also applied in pseudo code
  8. Created branches to add, commit, push and merge to git hub
 
-<img width="1440" alt="Screen Shot 2021-05-09 at 9 42 32 PM" src="https://user-images.githubusercontent.com/81955843/117607001-edf7d500-b10f-11eb-8212-eae79f003736.png">
-
-<img width="1440" alt="Screen Shot 2021-05-09 at 9 42 01 PM" src="https://user-images.githubusercontent.com/81955843/117607022-fbad5a80-b10f-11eb-8b58-db07436cd808.png">
-
-<img width="1440" alt="Screen Shot 2021-05-09 at 9 42 07 PM" src="https://user-images.githubusercontent.com/81955843/117607029-010aa500-b110-11eb-970e-da80d000db05.png">
+<img width="1440" alt="Screen Shot 2021-12-04 at 9 49 30 PM" src="https://user-images.githubusercontent.com/81955843/144735401-81b3cae7-6d08-4d75-a2d0-f6f921ce3fed.png">
+<img width="1440" alt="Screen Shot 2021-12-04 at 9 49 22 PM" src="https://user-images.githubusercontent.com/81955843/144735413-fb43e862-4c75-4649-b43e-39a5713333e4.png">
+<img width="1440" alt="Screen Shot 2021-12-04 at 9 49 57 PM" src="https://user-images.githubusercontent.com/81955843/144735415-d3f1d087-86de-4e72-8fc5-bf7c128fd9d6.png">
