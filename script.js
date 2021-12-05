@@ -8,11 +8,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
-
-
 }
-
 
 // Assignment Code 
 function generatePassword() {
@@ -98,21 +94,28 @@ function generatePassword() {
 
   return finalPass.join("")
 
-  
+};
 
-}
+function copyFunction() {
+  /* Get the text field */
+  var Pass = document.getElementById("password");;
+
+  /* Select the text field */
+  Pass.select();
+  Pass.setSelectionRange(0, 20); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(Pass.value);
+
+  /* Alert the copied text */
+  alert("Success You copied your new password " + Pass.value);
+};
+
+
+
 
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword)
+generateBtn.addEventListener('click', writePassword);
+copyBtn.addEventListener('click', copyFunction);
 
-const copyBtn = document.getElementById('copyBtn');
-
-copyBtn.addEventListener('click', (event) => {
-  var passwordText = document.querySelector("#password").textContent;
-
-  passwordText.select();
-  passwordText.setSelectionRange(0, 20); /* For mobile devices */
-
-  navigator.clipboard.writeText(passwordText);
-})
